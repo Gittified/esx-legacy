@@ -3,18 +3,6 @@ local HasAlreadyEnteredMarker, isDead, isHandcuffed, hasAlreadyJoined, playerInS
 local LastStation, LastPart, LastPartNum, LastEntity, CurrentAction, CurrentActionMsg
 dragStatus.isDragged, isInShopMenu = false, false
 
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-	ESX.PlayerData = xPlayer
-	ESX.PlayerLoaded = true
-end)
-
-RegisterNetEvent('esx:onPlayerLogout')
-AddEventHandler('esx:onPlayerLogout', function()
-	ESX.PlayerLoaded = false
-	ESX.PlayerData = {}
-end)
-
 function cleanPlayer(playerPed)
 	SetPedArmour(playerPed, 0)
 	ClearPedBloodDamage(playerPed)
