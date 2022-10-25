@@ -3,7 +3,7 @@ local HasAlreadyEnteredMarker, isDead, isHandcuffed, hasAlreadyJoined, playerInS
 local LastStation, LastPart, LastPartNum, LastEntity, CurrentAction, CurrentActionMsg
 dragStatus.isDragged, isInShopMenu = false, false
 
-function cleanPlayer(playerPed)
+local function cleanPlayer(playerPed)
 	SetPedArmour(playerPed, 0)
 	ClearPedBloodDamage(playerPed)
 	ResetPedVisibleDamage(playerPed)
@@ -11,7 +11,7 @@ function cleanPlayer(playerPed)
 	ResetPedMovementClipset(playerPed, 0)
 end
 
-function setUniform(uniform, playerPed)
+local function setUniform(uniform, playerPed)
 	TriggerEvent('skinchanger:getSkin', function(skin)
 		local uniformObject
 
